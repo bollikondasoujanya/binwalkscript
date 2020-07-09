@@ -41,7 +41,7 @@ for files in os.listdir(dir_name):#get the list of files
 #print "\tif entropy value is: > 0.9 firmware encrypted "
 #print "\tif entropy value is: < 0.9 firmware compressed"
 
-    for module in binwalk.scan(files,"-E",save=True,directory=ext_dir,signature=True,extract=True,quiet=True):
+    for module in binwalk.scan(files,"-reM","-E",save=True,directory=ext_dir,signature=True,quiet=True):
 
         for entry in module.results:
 
